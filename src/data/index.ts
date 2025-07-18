@@ -2,52 +2,52 @@ import { First, Second, Third, Fourth, Fifth } from '@/icons/ApproachIcons';
 
 export const NAV_ITEMS = [
   {
-    title: 'Главная',
+    title: 'Main',
     href: 'main',
   },
   {
-    title: 'О нас',
+    title: 'About',
     href: 'about',
   },
   {
-    title: 'Услуги',
+    title: 'Services',
     href: 'services',
   },
   {
-    title: 'Подход',
+    title: 'Approach',
     href: 'approach',
   },
   {
-    title: 'Связаться',
+    title: 'Contact',
     href: 'contact',
   },
 ];
 
 export const CARDS = [
   {
-    title: 'Дизайн',
+    title: 'Design',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
     services: [
-      ['Веб страниц', 'Брендинг'],
-      ['Мобильные приложения', 'Лого'],
+      ['Web app', 'Branding'],
+      ['Mobile app', 'Logo'],
     ],
     number: '01.',
     classes: '',
   },
   {
-    title: 'Фулстек разработка',
+    title: 'Fullstack development',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
     services: [
-      ['Онлайн магазин', 'Веб приложения'],
-      ['CMS', 'Разработка API'],
+      ['Online shop', 'Web application'],
+      ['CMS', 'API Development'],
     ],
     number: '02.',
     classes: 'border-t border-gray-1/50',
   },
   {
-    title: 'Мобильная разработка',
+    title: 'Mobile development',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
     services: [['Android', 'IOS']],
@@ -59,26 +59,26 @@ export const CARDS = [
 export const APPROACH_CARDS = [
   {
     icon: First,
-    title: 'Консультация',
+    title: 'Consultation',
     description:
-      'Мы внимательно выслушиваем пожелания и представления заказчика о проекте. Затем делимся своим видением и, на основе этого обмена, приходим к общему соглашению.',
+      "We listen carefully to the customer's wishes and ideas about the project. Then we share our vision and, based on this exchange, come to a common agreement.",
   },
   {
     icon: Second,
-    title: 'Совместный обзор',
+    title: 'Joint review',
     description:
-      'Затем приступаем к созданию дизайна. После завершения проводим совместный обзор, где заказчик, при желании может внести изменения.',
+      'Then we start creating the design. After completion, we conduct a joint review, where the customer, if desired, can make changes.',
   },
   {
     icon: Third,
-    title: 'Разработка',
-    description: 'После утверждения дизайна, мы приступаем к непосредственной разработке продукта.',
+    title: 'Development',
+    description: 'After the design is approved, we proceed to the actual development of the product.',
   },
   {
     icon: Fourth,
-    title: 'Тестирование',
+    title: 'Testing',
     description:
-      'По завершении разработки тщательно тестируем каждый компонент продукта. Затем приглашаем заказчика для пользовательского тестирования.',
+      'Once the development is complete, we thoroughly test each component of the product. Then we invite the customer for user testing.',
   },
   {
     icon: Fifth,
@@ -90,33 +90,33 @@ export const APPROACH_CARDS = [
 
 export const RADIO_FIELDS = [
   {
-    title: 'Какой тип услуг вас интересует?',
+    title: 'What type of services you want?',
     classes: 'mr-[2.25vw]',
     radioArray: [
-      { name: 'Дизайн / Брендинг', value: 'design/branding' },
-      { name: 'Веб разработка', value: 'web-dev' },
-      { name: 'Мобильная разработка', value: 'mobile-dev' },
-      { name: 'Все вышеперечисленные', value: 'all-types' },
-      { name: 'Другое', value: 'other-service' },
+      { name: 'Design/Branding', value: 'design/branding' },
+      { name: 'Web Development', value: 'web-dev' },
+      { name: 'Mobile Development', value: 'mobile-dev' },
+      { name: 'All of the above', value: 'all-types' },
+      { name: 'Other', value: 'other-service' },
     ],
     formKey: '_service',
   },
   {
-    title: 'Каков ваш бюджет?',
+    title: 'What is your budget category?',
     classes: '',
     radioArray: [
-      { name: '8000TMT - 15000TMT', value: '8-15' },
-      { name: '15000TMT - 25000TMT', value: '15-25' },
-      { name: '25000TMT - 50000TMT', value: '25-50' },
-      { name: '50000TMT+', value: '50+' },
+      { name: '$2000 - $4000', value: '2-4' },
+      { name: '$4000 - $8000', value: '4-8' },
+      { name: '$8000 - $10000', value: '8-10' },
+      { name: '$10000', value: '10+' },
     ],
     formKey: '_budget',
   },
   {
-    title: 'Примерно, сколько страниц будет иметь ваш проект?',
+    title: 'Approximately how many pages will your project have?',
     classes: 'mr-[2.25vw]',
     radioArray: [
-      { name: 'Меньше 5-ти', value: '<5' },
+      { name: 'Less than 5', value: '<5' },
       { name: '6-10', value: '6-10' },
       { name: '11-20', value: '11-20' },
       { name: '20+', value: '20+' },
@@ -124,24 +124,24 @@ export const RADIO_FIELDS = [
     formKey: '_pages',
   },
   {
-    title: 'Насколько быстро вам нужен проект?',
+    title: 'How quickly do you need the project?',
     classes: '',
     radioArray: [
-      { name: 'Максимально быстро', value: 'max-fast' },
-      { name: 'Высокая приоритетность ', value: 'high-prio ' },
-      { name: 'Обычное время', value: 'regular' },
-      { name: 'Не торопитесь ', value: 'take-your-time' },
+      { name: 'As fast as possible', value: 'max-fast' },
+      { name: 'High priority ', value: 'high-prio ' },
+      { name: 'Regular time', value: 'regular' },
+      { name: 'Take your time ', value: 'take-your-time' },
     ],
     formKey: '_quickness',
   },
 ];
 
 export const INPUT_FIELDS = [
-  { label: 'Выше имя', name: 'first', classes: 'inline-block !w-[calc(50%-2vw)] mr-[4vw]', required: true },
-  { label: 'Ваш номер', name: 'phone', classes: 'inline-block !w-[calc(50%-2vw)]', type: 'number', required: true },
+  { label: 'Your name', name: 'first', classes: 'inline-block !w-[calc(50%-2vw)] mr-[4vw]', required: true },
+  { label: 'Phone', name: 'phone', classes: 'inline-block !w-[calc(50%-2vw)]', type: 'number', required: true },
   { label: 'Email', name: 'email', classes: '', type: 'email' },
-  { label: 'Название компании', name: 'company', classes: '', required: true },
-  { label: 'Ссылка на сайт', name: 'websiteUrl', classes: '' },
+  { label: 'Company name', name: 'company', classes: '', required: true },
+  { label: 'Company website', name: 'websiteUrl', classes: '' },
 ];
 
 export const BOOK_FORM_DEFAULT_STATE = {
