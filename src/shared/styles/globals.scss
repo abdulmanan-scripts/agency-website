@@ -44,39 +44,62 @@ a {
 //navigation
 .burger {
   width: 100%;
+  position: relative;
+  z-index: 10;
+  
   &::after,
   &::before {
     content: '';
     display: block;
-    height: 0.2vw;
-    width: 40%;
+    height: 0.25vw;
+    width: 45%;
     margin: auto;
-    background: linear-gradient(45deg, #CCC2DC, #ffffff);
+    background: linear-gradient(90deg, #CCC2DC 0%, #ffffff 50%, #CCC2DC 100%);
     position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 10px rgba(204, 194, 220, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 0 15px rgba(204, 194, 220, 0.4),
+      0 0 30px rgba(204, 194, 220, 0.2);
+    border-radius: 2px;
   }
 
   &::after {
-    top: -0.3vw;
+    top: -0.4vw;
   }
 
   &::before {
-    top: 0.3vw;
+    top: 0.4vw;
+  }
+  
+  // Hover state
+  &:hover {
+    &::after,
+    &::before {
+      background: linear-gradient(90deg, #ffffff 0%, #CCC2DC 50%, #ffffff 100%);
+      box-shadow: 
+        0 0 20px rgba(204, 194, 220, 0.6),
+        0 0 40px rgba(204, 194, 220, 0.3);
+    }
   }
 }
 
 .burgerActive {
   &::after {
     transform: rotate(45deg);
-    top: -0.1vw;
-    box-shadow: 0 0 15px rgba(204, 194, 220, 0.5);
+    top: -0.125vw;
+    background: linear-gradient(45deg, #ff6b6b 0%, #CCC2DC 50%, #ffffff 100%);
+    box-shadow: 
+      0 0 20px rgba(204, 194, 220, 0.7),
+      0 0 40px rgba(255, 107, 107, 0.3);
   }
 
   &::before {
     transform: rotate(-45deg);
-    top: 0px;
-    box-shadow: 0 0 15px rgba(204, 194, 220, 0.5);
+    top: 0.125vw;
+    background: linear-gradient(-45deg, #ff6b6b 0%, #CCC2DC 50%, #ffffff 100%);
+    box-shadow: 
+      0 0 20px rgba(204, 194, 220, 0.7),
+      0 0 40px rgba(255, 107, 107, 0.3);
   }
 }
 
