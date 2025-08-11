@@ -6,6 +6,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: none; /* Hide default cursor for custom cursor */
 
   &::selection {
     @apply bg-primary text-bg-1;
@@ -16,6 +17,7 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
   @apply text-text-1;
+  overflow-x: hidden;
 }
 
 html {
@@ -49,9 +51,10 @@ a {
     height: 0.2vw;
     width: 40%;
     margin: auto;
-    background-color: #404040;
+    background: linear-gradient(45deg, #CCC2DC, #ffffff);
     position: relative;
-    transition: transform 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgba(204, 194, 220, 0.3);
   }
 
   &::after {
@@ -67,11 +70,13 @@ a {
   &::after {
     transform: rotate(45deg);
     top: -0.1vw;
+    box-shadow: 0 0 15px rgba(204, 194, 220, 0.5);
   }
 
   &::before {
     transform: rotate(-45deg);
     top: 0px;
+    box-shadow: 0 0 15px rgba(204, 194, 220, 0.5);
   }
 }
 
@@ -84,4 +89,41 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(20, 18, 24, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #CCC2DC, #4A4458);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #CCC2DC, #ffffff);
+}
+
+/* Enhanced glassmorphism utilities */
+.glass-light {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-medium {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-heavy {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }

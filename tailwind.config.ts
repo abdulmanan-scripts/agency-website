@@ -20,11 +20,21 @@ module.exports = {
 
         stroke: '#4A4458',
       },
+      boxShadow: {
+        '3xl': '0 35px 60px -12px rgba(0, 0, 0, 0.25)',
+        'glow': '0 0 20px rgba(204, 194, 220, 0.3)',
+        'glow-lg': '0 0 40px rgba(204, 194, 220, 0.4)',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
 
       animation: {
         aurora: 'aurora 60s linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
       },
 
       keyframes: {
@@ -43,6 +53,14 @@ module.exports = {
           to: {
             backgroundPosition: '350% 50%, 350% 50%',
           },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 20px rgba(204, 194, 220, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(204, 194, 220, 0.6)' },
         },
       },
     },

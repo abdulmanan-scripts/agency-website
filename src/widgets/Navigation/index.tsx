@@ -26,12 +26,19 @@ const Index: FC<Props> = () => {
       <div className="fixed right-0 z-[4001] p-[2vw]">
         <button
           type="button"
+          data-cursor-hover
+          data-cursor-text={isActive ? "Close Menu" : "Open Menu"}
           onClick={() => setIsActive(!isActive)}
-          className="flex h-[4.5vw] w-[4.5vw] cursor-pointer items-center justify-center rounded-full bg-stone-400">
+          className="flex h-[4.5vw] w-[4.5vw] cursor-pointer items-center justify-center rounded-full backdrop-blur-md bg-white/20 border border-white/30 hover:bg-white/30 hover:border-white/40 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20 group">
           <div className={`burger ${isActive && 'burgerActive'}`}></div>
         </button>
       </div>
-      <button title="your_agency_name" className="p-[2vw] fixed z-[100] top-0 left-0 group">
+      <button 
+        title="your_agency_name" 
+        data-cursor-hover
+        data-cursor-text="Home"
+        className="p-[2vw] fixed z-[100] top-0 left-0 group backdrop-blur-sm bg-white/5 rounded-br-2xl border-r border-b border-white/10 hover:bg-white/10 transition-all duration-300"
+      >
         <LogoIcon className="w-[5vw] h-[5vw] group-hover:text-white/80 transition duration-300" />
       </button>
       <AnimatePresence mode="wait">{isActive && (

@@ -6,7 +6,8 @@ import About from '@/widgets/About';
 import Services from '@/widgets/Services';
 import Approach from '@/widgets/Approach';
 import CallToAction from '@/widgets/CallToAction';
-import ShadowCursor from '@/components/ui/ShadowCursor'
+import ShadowCursor from '@/components/ui/ShadowCursor';
+import AdvancedCursor from '@/components/ui/AdvancedCursor';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
 
       {/* disable cursor here */}
       <ShadowCursor />
+      <AdvancedCursor />
     </>
   );
 }
