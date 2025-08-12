@@ -30,7 +30,7 @@ const AdvancedCursor: FC<Props> = () => {
     // Handle hover states for interactive elements
     const handleElementHover = (e: Event) => {
       const target = e.target as HTMLElement;
-      if (target.matches('button, a, [data-cursor-hover], input, textarea')) {
+      if (target instanceof Element && target.matches('button, a, [data-cursor-hover], input, textarea')) {
         setIsHovering(true);
         const text = target.getAttribute('data-cursor-text') || '';
         setCursorText(text);
