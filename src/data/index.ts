@@ -25,32 +25,32 @@ export const NAV_ITEMS = [
 
 export const CARDS = [
   {
-    title: 'Design',
+    title: 'Digital Strategy',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
+      'Transform your business with comprehensive digital strategies. We analyze market trends, competitor landscapes, and user behavior to create data-driven roadmaps that accelerate growth and maximize ROI.',
     services: [
-      ['Web app', 'Branding'],
-      ['Mobile app', 'Logo'],
+      ['Brand Strategy', 'Market Research'],
+      ['Digital Transformation', 'Analytics Setup'],
     ],
     number: '01.',
     classes: '',
   },
   {
-    title: 'Fullstack development',
+    title: 'Creative Development',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
+      'Bring your vision to life with cutting-edge web and mobile applications. Our team crafts scalable, performant solutions using the latest technologies while maintaining exceptional user experiences.',
     services: [
-      ['Online shop', 'Web application'],
-      ['CMS', 'API Development'],
+      ['Web Applications', 'Mobile Apps'],
+      ['E-commerce', 'Custom Solutions'],
     ],
     number: '02.',
     classes: 'border-t border-gray-1/50',
   },
   {
-    title: 'Mobile development',
+    title: 'Brand & Design',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
-    services: [['Android', 'IOS']],
+      'Create memorable brand experiences that resonate with your audience. From logo design to complete brand systems, we develop cohesive visual identities that drive engagement and build trust.',
+    services: [['Brand Identity', 'UI/UX Design'], ['Marketing Materials', 'Brand Guidelines']],
     number: '03.',
     classes: 'border-t border-gray-1/50',
   },
@@ -59,101 +59,101 @@ export const CARDS = [
 export const APPROACH_CARDS = [
   {
     icon: First,
-    title: 'Consultation',
+    title: 'Discovery & Strategy',
     description:
-      "We listen carefully to the customer's wishes and ideas about the project. Then we share our vision and, based on this exchange, come to a common agreement.",
+      'We begin with deep research into your business goals, target audience, and market landscape. This foundation ensures every decision is strategic and aligned with your vision.',
   },
   {
     icon: Second,
-    title: 'Joint review',
+    title: 'Collaborative Design',
     description:
-      'Then we start creating the design. After completion, we conduct a joint review, where the customer, if desired, can make changes.',
+      'Working closely with your team, we create wireframes, prototypes, and designs that bring your ideas to life. Regular feedback loops ensure the final product exceeds expectations.',
   },
   {
     icon: Third,
-    title: 'Development',
-    description: 'After the design is approved, we proceed to the actual development of the product.',
+    title: 'Agile Development',
+    description: 'Our development process is iterative and transparent. We build in sprints, allowing for continuous testing, refinement, and adaptation throughout the project lifecycle.',
   },
   {
     icon: Fourth,
-    title: 'Testing',
+    title: 'Quality Assurance',
     description:
-      'Once the development is complete, we thoroughly test each component of the product. Then we invite the customer for user testing.',
+      'Rigorous testing across all devices and platforms ensures your product performs flawlessly. We conduct user testing sessions to validate functionality and user experience.',
   },
   {
     icon: Fifth,
-    title: 'Final result',
+    title: 'Launch & Growth',
     description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates laboriosam ad eius, culpa soluta ab. Beatae optio quas adipisci aliquam quia velit soluta iste dicta, modi tenetur magnam, aut laborum placeat est. Unde minima amet illo eveniet qui sunt omnis laudantium laboriosam, officia dignissimos molestias tempore velit. Provident, explicabo. Dolor.',
+      'Beyond launch, we provide ongoing support, analytics monitoring, and optimization strategies to ensure your digital presence continues to evolve and grow with your business.',
   },
 ];
 
 export const RADIO_FIELDS = [
   {
-    title: 'What type of services you want?',
+    title: 'What type of services do you need?',
     classes: 'mr-[2.25vw]',
     radioArray: [
-      { name: 'Design/Branding', value: 'design/branding' },
+      { name: 'Digital Strategy', value: 'digital-strategy' },
       { name: 'Web Development', value: 'web-dev' },
       { name: 'Mobile Development', value: 'mobile-dev' },
-      { name: 'All of the above', value: 'all-types' },
-      { name: 'Other', value: 'other-service' },
+      { name: 'Brand & Design', value: 'brand-design' },
+      { name: 'All Services', value: 'all-services' },
     ],
     formKey: '_service',
   },
   {
-    title: 'What is your budget category?',
+    title: 'What is your project budget?',
     classes: '',
     radioArray: [
-      { name: '$2000 - $4000', value: '2-4' },
-      { name: '$4000 - $8000', value: '4-8' },
-      { name: '$8000 - $10000', value: '8-10' },
-      { name: '$10000', value: '10+' },
+      { name: '$5,000 - $15,000', value: '5-15' },
+      { name: '$15,000 - $30,000', value: '15-30' },
+      { name: '$30,000 - $50,000', value: '30-50' },
+      { name: '$50,000+', value: '50+' },
     ],
     formKey: '_budget',
   },
   {
-    title: 'Approximately how many pages will your project have?',
+    title: 'Project timeline expectations?',
     classes: 'mr-[2.25vw]',
     radioArray: [
-      { name: 'Less than 5', value: '<5' },
-      { name: '6-10', value: '6-10' },
-      { name: '11-20', value: '11-20' },
-      { name: '20+', value: '20+' },
+      { name: '1-2 months', value: '1-2' },
+      { name: '3-4 months', value: '3-4' },
+      { name: '5-6 months', value: '5-6' },
+      { name: '6+ months', value: '6+' },
     ],
-    formKey: '_pages',
+    formKey: '_timeline',
   },
   {
-    title: 'How quickly do you need the project?',
+    title: 'How did you hear about BuddyBoard?',
     classes: '',
     radioArray: [
-      { name: 'As fast as possible', value: 'max-fast' },
-      { name: 'High priority ', value: 'high-prio ' },
-      { name: 'Regular time', value: 'regular' },
-      { name: 'Take your time ', value: 'take-your-time' },
+      { name: 'Google Search', value: 'google' },
+      { name: 'Social Media', value: 'social' },
+      { name: 'Referral', value: 'referral' },
+      { name: 'Other', value: 'other' },
     ],
-    formKey: '_quickness',
+    formKey: '_source',
   },
 ];
 
 export const INPUT_FIELDS = [
-  { label: 'Your name', name: 'first', classes: 'inline-block !w-[calc(50%-2vw)] mr-[4vw]', required: true },
-  { label: 'Phone', name: 'phone', classes: 'inline-block !w-[calc(50%-2vw)]', type: 'number', required: true },
-  { label: 'Email', name: 'email', classes: '', type: 'email' },
-  { label: 'Company name', name: 'company', classes: '', required: true },
-  { label: 'Company website', name: 'websiteUrl', classes: '' },
+  { label: 'Full Name', name: 'fullName', classes: 'inline-block !w-[calc(50%-2vw)] mr-[4vw]', required: true },
+  { label: 'Phone Number', name: 'phone', classes: 'inline-block !w-[calc(50%-2vw)]', type: 'tel', required: true },
+  { label: 'Email Address', name: 'email', classes: '', type: 'email', required: true },
+  { label: 'Company Name', name: 'company', classes: '', required: true },
+  { label: 'Company Website', name: 'website', classes: '', type: 'url' },
 ];
 
 export const BOOK_FORM_DEFAULT_STATE = {
   _service: null,
   _budget: null,
-  _pages: null,
-  _quickness: null,
+  _timeline: null,
+  _source: null,
 
-  first: '',
+  fullName: '',
   phone: '',
   email: '',
   company: '',
-  websiteUrl: '',
+  website: '',
   message: '',
 };

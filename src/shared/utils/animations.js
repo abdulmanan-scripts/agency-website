@@ -2,27 +2,24 @@ export const menuSlide = {
   initial: { 
     x: 'calc(100% + 100px)',
     opacity: 0,
-    scale: 0.95,
-    rotateY: 15
+    scale: 0.98
   },
   enter: { 
     x: '0',
     opacity: 1,
     scale: 1,
-    rotateY: 0,
     transition: { 
-      duration: 0.8, 
+      duration: 0.5, 
       ease: [0.4, 0, 0.2, 1],
-      staggerChildren: 0.1
+      staggerChildren: 0.05
     } 
   },
   exit: { 
-    x: 'calc(100% + 50px)',
+    x: 'calc(100% + 100px)',
     opacity: 0,
-    scale: 0.95,
-    rotateY: -10,
+    scale: 0.98,
     transition: { 
-      duration: 0.5, 
+      duration: 0.3, 
       ease: [0.4, 0, 0.2, 1] 
     } 
   },
@@ -30,26 +27,26 @@ export const menuSlide = {
 
 export const slide = {
   initial: { 
-    x: 60, 
+    x: 30, 
     opacity: 0,
-    scale: 0.9
+    scale: 0.95
   },
   enter: (i) => ({ 
     x: 0, 
     opacity: 1,
     scale: 1,
     transition: { 
-      duration: 0.6, 
+      duration: 0.4, 
       ease: [0.4, 0, 0.2, 1], 
-      delay: 0.1 + 0.05 * i 
+      delay: 0.05 + 0.03 * i 
     } 
   }),
   exit: {
-    x: 30,
+    x: 20,
     opacity: 0,
-    scale: 0.9,
+    scale: 0.95,
     transition: {
-      duration: 0.3,
+      duration: 0.2,
       ease: [0.4, 0, 0.2, 1]
     }
   }
@@ -61,9 +58,9 @@ export const scale = {
     opacity: 1,
     x: 0,
     transition: { 
-      duration: 0.4, 
+      duration: 0.3, 
       ease: [0.4, 0, 0.2, 1],
-      delay: 0.1 
+      delay: 0.05 
     } 
   },
   closed: { 
@@ -71,7 +68,7 @@ export const scale = {
     opacity: 0,
     x: -10,
     transition: { 
-      duration: 0.2,
+      duration: 0.15,
       ease: [0.4, 0, 0.2, 1]
     } 
   },
@@ -82,8 +79,8 @@ export const staggerContainer = {
   initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
     },
   },
 };
@@ -97,7 +94,7 @@ export const fadeInUp = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: [0.4, 0, 0.2, 1],
     },
   },
@@ -112,7 +109,7 @@ export const scaleIn = {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: [0.4, 0, 0.2, 1],
     },
   },

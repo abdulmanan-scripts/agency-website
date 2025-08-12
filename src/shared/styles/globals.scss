@@ -6,7 +6,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  cursor: none; /* Hide default cursor for custom cursor */
+  cursor: none !important; /* Hide default cursor for custom cursor */
 
   &::selection {
     @apply bg-primary text-bg-1;
@@ -18,18 +18,29 @@ body {
   font-family: 'Montserrat', sans-serif;
   @apply text-text-1;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 html {
   color-scheme: dark;
 }
 
-body {
-}
-
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Improve performance */
+* {
+  will-change: auto;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
 }
 
 @layer utilities {
@@ -46,6 +57,7 @@ a {
   width: 100%;
   position: relative;
   z-index: 10;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   &::after,
   &::before {
@@ -56,7 +68,7 @@ a {
     margin: auto;
     background: linear-gradient(90deg, #CCC2DC 0%, #ffffff 50%, #CCC2DC 100%);
     position: relative;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
       0 0 15px rgba(204, 194, 220, 0.4),
       0 0 30px rgba(204, 194, 220, 0.2);
@@ -87,19 +99,19 @@ a {
   &::after {
     transform: rotate(45deg);
     top: -0.125vw;
-    background: linear-gradient(45deg, #ff6b6b 0%, #CCC2DC 50%, #ffffff 100%);
+    background: linear-gradient(45deg, #CCC2DC 0%, #ffffff 50%, #CCC2DC 100%);
     box-shadow: 
       0 0 20px rgba(204, 194, 220, 0.7),
-      0 0 40px rgba(255, 107, 107, 0.3);
+      0 0 40px rgba(204, 194, 220, 0.3);
   }
 
   &::before {
     transform: rotate(-45deg);
     top: 0.125vw;
-    background: linear-gradient(-45deg, #ff6b6b 0%, #CCC2DC 50%, #ffffff 100%);
+    background: linear-gradient(-45deg, #CCC2DC 0%, #ffffff 50%, #CCC2DC 100%);
     box-shadow: 
       0 0 20px rgba(204, 194, 220, 0.7),
-      0 0 40px rgba(255, 107, 107, 0.3);
+      0 0 40px rgba(204, 194, 220, 0.3);
   }
 }
 

@@ -13,7 +13,7 @@ const Index: FC<Props> = () => {
         <div className="relative self-start px-[6vw] md:px-[3vw] pb-[5vw] pt-[3vw]">
           <div className="flex space-x-[5vw] md:space-x-0 md:flex-col md:space-y-[3vw] md:items-center">
             <p className="flex grow-[4] basis-0 flex-wrap text-[2.3vw] md:text-[3.8vw] md:leading-[1.3] md:text-balance md:text-center">
-              We are a young, close-knit team of like-minded people ready to help brands from USA prosper in the digital world.
+              We are BuddyBoard - a dynamic team of digital innovators dedicated to transforming businesses through strategic design and cutting-edge technology solutions.
             </p>
 
             <div className="relative h-[20vw] w-[30vw] md:h-[40vw] md:max-w-[90%] md:text-center grow-[3] md:w-full basis-0 md:basis-[initial]  bg-bg-2">

@@ -36,10 +36,10 @@ const Hero = () => {
           className="relative z-20 mt-[-5vw] w-full text-center text-[4.5vw] md:text-[6vw] md:leading-[1.2] font-extrabold text-text-1 max-w-[95%]"
           style={{ opacity }}
         >
-          CREATING UNIQUENESS
+          BUDDYBOARD DIGITAL
         </motion.h1>
         <motion.h2 ref={heading2} className="z-20 text-[1.7vw] md:text-[3vw] font-medium text-text-1/7 5" style={{ opacity }} >
-          Creative agency from USA, Tennessee
+          Your Strategic Digital Partner
         </motion.h2>
         <div ref={ref1} className={`absolute left-0 top-0 z-10 h-full w-full`}>
           <Image src={main_1} fill={true} alt="" className='' objectFit="cover" />

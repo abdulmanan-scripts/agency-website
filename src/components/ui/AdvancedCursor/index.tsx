@@ -13,14 +13,14 @@ const AdvancedCursor: FC<Props> = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  const springConfig = { damping: 25, stiffness: 700 };
+  const springConfig = { damping: 30, stiffness: 800 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
+      cursorX.set(e.clientX - 8);
+      cursorY.set(e.clientY - 8);
       setIsVisible(true);
     };
 
@@ -30,7 +30,7 @@ const AdvancedCursor: FC<Props> = () => {
     // Handle hover states for interactive elements
     const handleElementHover = (e: Event) => {
       const target = e.target as HTMLElement;
-      if (target.matches('button, a, [data-cursor-hover]')) {
+      if (target.matches('button, a, [data-cursor-hover], input, textarea')) {
         setIsHovering(true);
         const text = target.getAttribute('data-cursor-text') || '';
         setCursorText(text);
@@ -61,29 +61,29 @@ const AdvancedCursor: FC<Props> = () => {
 
   return (
     <>
-      {/* Main cursor */}
+      {/* Main cursor - pointer style */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 w-4 h-4 pointer-events-none z-[9999] mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
         }}
         animate={{
-          scale: isHovering ? 1.5 : 1,
+          scale: isHovering ? 2 : 1,
           opacity: isVisible ? 1 : 0,
         }}
         transition={{
-          scale: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.2 }
+          scale: { type: "spring", stiffness: 400, damping: 25 },
+          opacity: { duration: 0.15 }
         }}
       >
-        <div className="w-full h-full rounded-full bg-white relative">
-          {/* Inner dot */}
-          <motion.div 
-            className="absolute top-1/2 left-1/2 w-1 h-1 bg-black rounded-full"
-            style={{ x: '-50%', y: '-50%' }}
-            animate={{
-              scale: isHovering ? 0 : 1,
+        <div className="w-full h-full relative">
+          {/* Pointer shape */}
+          <div 
+            className="w-full h-full bg-white relative"
+            style={{
+              clipPath: 'polygon(0 0, 0 80%, 30% 60%, 50% 100%, 60% 50%, 80% 30%, 100% 50%, 50% 0)',
+              transform: 'rotate(-45deg)',
             }}
           />
           
@@ -102,15 +102,15 @@ const AdvancedCursor: FC<Props> = () => {
         </div>
       </motion.div>
 
-      {/* Trailing particles */}
+      {/* Trailing dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-1 h-1 pointer-events-none z-[9998]"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
         }}
         animate={{
-          opacity: isVisible ? 0.6 : 0,
+          opacity: isVisible ? 0.4 : 0,
         }}
       >
         <div className="w-full h-full rounded-full bg-primary/60 blur-sm" />

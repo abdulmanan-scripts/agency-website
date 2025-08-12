@@ -42,7 +42,9 @@ const Index: FC<Props> = ({ close }) => {
 
   const smoothScroll = (id: string) => {
     const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     close();
   };
 
@@ -50,11 +52,11 @@ const Index: FC<Props> = ({ close }) => {
     <>
       {/* Enhanced backdrop with animated blur */}
       <motion.div
-        initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
-        animate={{ opacity: 1, backdropFilter: 'blur(20px)' }}
-        exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
-        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-        className="fixed inset-0 z-[3999] bg-black/30"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="fixed inset-0 z-[3999] bg-black/30 backdrop-blur-xl"
         onClick={close}
       />
       
@@ -66,8 +68,8 @@ const Index: FC<Props> = ({ close }) => {
         animate="enter"
         exit="exit"
         style={{
-          rotateX: rotateX,
-          rotateY: rotateY,
+          rotateX: isHovered ? rotateX : 0,
+          rotateY: isHovered ? rotateY : 0,
           transformStyle: "preserve-3d",
         }}
         onMouseMove={handleMouseMove}
@@ -78,10 +80,10 @@ const Index: FC<Props> = ({ close }) => {
         {/* Multi-layered glassmorphism background */}
         <div className="absolute inset-0">
           {/* Base glass layer */}
-          <div className="absolute inset-0 backdrop-blur-2xl bg-gradient-to-br from-bg-1/60 via-bg-2/70 to-gray-1/50" />
+          <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-br from-bg-1/80 via-bg-2/90 to-gray-1/70" />
           
           {/* Secondary glass layer with different blur */}
-          <div className="absolute inset-0 backdrop-blur-md bg-gradient-to-tl from-primary/5 via-transparent to-stroke/10" />
+          <div className="absolute inset-0 bg-gradient-to-tl from-primary/5 via-transparent to-stroke/10" />
           
           {/* Border gradients */}
           <div className="absolute inset-0 border-l-2 border-gradient-to-b from-primary/40 via-white/20 to-stroke/30" />
@@ -100,7 +102,7 @@ const Index: FC<Props> = ({ close }) => {
               y: [0, -10, 0],
             }}
             transition={{
-              duration: 6,
+              duration: 8,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -114,7 +116,7 @@ const Index: FC<Props> = ({ close }) => {
               y: [0, 15, 0],
             }}
             transition={{
-              duration: 4,
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut",
               delay: 2,
@@ -128,7 +130,7 @@ const Index: FC<Props> = ({ close }) => {
               rotate: [0, 180, 360],
             }}
             transition={{
-              duration: 8,
+              duration: 10,
               repeat: Infinity,
               ease: "linear",
             }}
@@ -148,7 +150,7 @@ const Index: FC<Props> = ({ close }) => {
               opacity: [0.2, 0.4, 0.2],
             }}
             transition={{
-              duration: 3,
+              duration: 4,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -162,7 +164,7 @@ const Index: FC<Props> = ({ close }) => {
             className="mb-[3vw] md:mb-[4vw]"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
           >
             {/* Close button */}
             <motion.button
@@ -182,7 +184,7 @@ const Index: FC<Props> = ({ close }) => {
                 className="text-[2.5vw] md:text-[5vw] font-bold bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
               >
                 Navigation
               </motion.h2>
@@ -190,7 +192,7 @@ const Index: FC<Props> = ({ close }) => {
                 className="h-[0.15vw] bg-gradient-to-r from-primary via-white to-transparent rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: '60%' }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
               />
             </div>
           </motion.div>
@@ -207,8 +209,8 @@ const Index: FC<Props> = ({ close }) => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ 
-                    delay: 0.4 + index * 0.1, 
-                    duration: 0.6,
+                    delay: 0.2 + index * 0.05, 
+                    duration: 0.4,
                     ease: [0.4, 0, 0.2, 1]
                   }}
                 >
@@ -228,7 +230,7 @@ const Index: FC<Props> = ({ close }) => {
             className="space-y-[1.5vw] md:space-y-[3vw]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
+            transition={{ delay: 0.4, duration: 0.4 }}
           >
             {/* Divider */}
             <div className="h-[0.1vw] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
